@@ -1,0 +1,5 @@
+{
+  "SERVER_URL": "http://localhost:4000/graphql",
+  "REFRESH_TOKENS_URL": "http://localhost:4000/refresh-jwt/new-refresh-token",
+  "REFRESH_TIME": "298000"
+}
