@@ -1,8 +1,8 @@
 import React, { Dispatch, FC, SetStateAction } from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
-import { RetaurantQuery_getRestaurant_restaurant_dishGroups } from "../../../__generated__/RetaurantQuery";
+import { RestaurantQuery_getRestaurant_restaurant_dishGroups } from "../../../__generated__/RestaurantQuery";
 interface Props {
-  dishGroups: RetaurantQuery_getRestaurant_restaurant_dishGroups[];
+  dishGroups: RestaurantQuery_getRestaurant_restaurant_dishGroups[];
   dishGroupActive: number;
   setDishGroupActive: Dispatch<SetStateAction<number>>;
 }

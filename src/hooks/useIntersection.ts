@@ -6,9 +6,7 @@ export function useIntersection(
 ) {
   const memoedOption = useMemo(() => option, [option]);
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      console.log("hello");
-    }, memoedOption);
+    const observer = new IntersectionObserver((entries) => {}, memoedOption);
     const element = ref.current;
     if (element) observer.observe(element);
     return () => {

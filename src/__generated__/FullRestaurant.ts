@@ -52,6 +52,7 @@ export interface FullRestaurant_dishGroups_dishes {
   __typename: "Dish";
   id: string;
   name: string;
+  slug: string;
   dishImage: FullRestaurant_dishGroups_dishes_dishImage | null;
   price: number;
   averageRating: number | null;
@@ -74,6 +75,12 @@ export interface FullRestaurant_categories {
   name: string;
 }
 
+export interface FullRestaurant_coordinates {
+  __typename: "Coordinates";
+  latitude: number;
+  longtitude: number;
+}
+
 export interface FullRestaurant_backgroundImage {
   __typename: "Image";
   imagePath: string;
@@ -88,6 +95,7 @@ export interface FullRestaurant {
   categories: FullRestaurant_categories[] | null;
   restaurantName: string;
   address: string;
+  coordinates: FullRestaurant_coordinates;
   backgroundImage: FullRestaurant_backgroundImage | null;
   openTime: any | null;
   closeTime: any | null;

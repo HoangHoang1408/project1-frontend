@@ -6,7 +6,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { mainImage } from "../../../images";
 import { ShopingPageQuery_topRestaurants_restaurants } from "../../../__generated__/ShopingPageQuery";
-import Loading from "../../main/Loading";
+import Loading from "../../layout/Loading";
 
 interface Props {
   restaurants: ShopingPageQuery_topRestaurants_restaurants[] | null | undefined;
@@ -58,7 +58,7 @@ const CommonRestaurants: FC<Props> = ({ restaurants, loading }) => {
                     key={id}
                     className="w-1/2 sm:w-4/12 lg:w-3/12 h-full shrink-0 px-2"
                   >
-                    <div className="rounded-md shadow cursor-pointer overflow-hidden pb-2 bg-slate-100">
+                    <div className="rounded-md cursor-pointer overflow-hidden pb-2">
                       <div className="h-40">
                         <LazyLoadImage
                           src={imageSrc}

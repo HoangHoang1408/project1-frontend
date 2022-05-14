@@ -1,5 +1,6 @@
 {
   "SERVER_URL": "http://localhost:4000/graphql",
   "REFRESH_TOKENS_URL": "http://localhost:4000/refresh-jwt/new-refresh-token",
-  "REFRESH_TIME": "298000"
+  "REFRESH_TIME": "298000",
+  "MAP_BOX_PUBLIC_KEY": "pk.eyJ1IjoiaG9hbmcxNDgyMDAyIiwiYSI6ImNrenh4YWxpODA1djQybm8zaWoxd3g5dGcifQ.y-vcjvs8OhXXSYw9NSUzQw"
 }

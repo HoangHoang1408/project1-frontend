@@ -21,6 +21,7 @@ export const DISH_FRAGMENT = gql`
   fragment Dish on Dish {
     id
     name
+    slug
     dishImage {
       imagePath
       imageUrl
@@ -65,6 +66,10 @@ export const FULL_RESTAURANT_FRAGMENT = gql`
     }
     restaurantName
     address
+    coordinates {
+      latitude
+      longtitude
+    }
     backgroundImage {
       imagePath
       imageUrl

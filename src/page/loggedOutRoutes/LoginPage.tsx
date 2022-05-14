@@ -1,16 +1,16 @@
-import { gql, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
   setLoginStatusToLocal,
   userObjectVar,
-} from "../../apollo/loginStatus";
+} from "../../apollo/reactiveVar/loginStatus";
 import {
   NormaInputProps,
   NormalInput,
 } from "../../components/custom/form/NormalInput";
-import { SIMPLE_USER_FRAGMENT } from "../../constants/fragment/SimpleUserFragment";
+import { LOGIN_MUTATION } from "../../apollo/query/loginMutation";
 import { loadingWhite } from "../../images";
 import {
   LoginMutaion,
@@ -24,6 +24,7 @@ type LoginInputs = {
 
 function LoginPage() {
   // form hook
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
@@ -42,7 +43,7 @@ function LoginPage() {
           message: "Email is required!",
         },
         pattern:
-          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       }),
       errorMessage:
         errors.email?.message || errors.email?.type === "pattern"
@@ -74,10 +75,11 @@ function LoginPage() {
           isLoggedIn: true,
           accessToken,
         });
-        console.log(user);
+        navigate("/");
+        toast.success("Welcome back!");
       },
       onError: () => {
-        toast.error("Can not login right now. Please try again later");
+        toast.error("Can not login right now. Please try again later!");
       },
     }
   );
@@ -131,21 +133,5 @@ function LoginPage() {
     </div>
   );
 }
-
-const LOGIN_MUTATION = gql`
-  ${SIMPLE_USER_FRAGMENT}
-  mutation LoginMutaion($input: LoginInput!) {
-    login(input: $input) {
-      ok
-      error {
-        message
-      }
-      accessToken
-      user {
-        ...SimpleUser
-      }
-    }
-  }
-`;
 
 export default LoginPage;

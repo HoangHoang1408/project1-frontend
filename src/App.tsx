@@ -1,11 +1,10 @@
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Loading from "./components/main/Loading";
+import Loading from "./components/layout/Loading";
 import Wrapper from "./components/main/Wrapper";
 import { useLoadUser } from "./hooks/useLoadUser";
 import LoggedInRoutesPage from "./page/LoggedInRoutes";
 import LoggedOutRoutesPage from "./page/LoggedOutRoutes";
-
 function App() {
   const { isLoggedIn, loading } = useLoadUser();
   return (

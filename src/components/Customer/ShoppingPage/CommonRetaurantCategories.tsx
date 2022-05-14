@@ -3,7 +3,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { mainImage } from "../../../images";
 import { ShopingPageQuery_topRestaurantCategories_restaurantCategories } from "../../../__generated__/ShopingPageQuery";
-import Loading from "../../main/Loading";
+import Loading from "../../layout/Loading";
 interface Props {
   categories:
     | ShopingPageQuery_topRestaurantCategories_restaurantCategories[]
@@ -29,7 +29,7 @@ const CommonRetaurantCategories: FC<Props> = ({ categories, loading }) => {
             <Link
               to={`/category/${category.id}`}
               key={i}
-              className="col-span-6 sm:col-span-4 lg:col-span-3 shadow cursor-pointer pb-1 bg-slate-100 flex flex-col space-y-2"
+              className="col-span-6 sm:col-span-4 lg:col-span-3 cursor-pointer pb-1 flex flex-col space-y-2"
             >
               <div className="h-40 rounded-md overflow-hidden">
                 <LazyLoadImage

@@ -1,5 +1,5 @@
-import { userObjectVar } from "../apollo/loginStatus";
-import Loading from "../components/main/Loading";
+import { userObjectVar } from "../apollo/reactiveVar/loginStatus";
+import Loading from "../components/layout/Loading";
 import { UserRole } from "../__generated__/globalTypes";
 import CustomerRoutes from "./loggedInRoutes/CustomerRoutes";
 import DriverRoutes from "./loggedInRoutes/DriverRoutes";

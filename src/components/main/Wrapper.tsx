@@ -1,6 +1,6 @@
 import { useReactiveVar } from "@apollo/client";
 import { FC } from "react";
-import { loginStatusVar } from "../../apollo/loginStatus";
+import { loginStatusVar } from "../../apollo/reactiveVar/loginStatus";
 import Footer from "./Footer";
 import Header from "./Header";
 import PartialHeader from "./PartialHeader";

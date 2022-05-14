@@ -52,6 +52,7 @@ export interface DishGroup_dishes {
   __typename: "Dish";
   id: string;
   name: string;
+  slug: string;
   dishImage: DishGroup_dishes_dishImage | null;
   price: number;
   averageRating: number | null;
